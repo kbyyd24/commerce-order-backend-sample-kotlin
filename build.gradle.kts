@@ -10,6 +10,8 @@ plugins {
 
     // Apply the application to add support for building a CLI application
     application
+
+    idea
 }
 
 repositories {
