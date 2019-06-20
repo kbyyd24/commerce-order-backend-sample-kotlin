@@ -38,3 +38,15 @@ dependencies {
 application {
     mainClassName = "cn.gaoyuexiang.commerce.order.AppKt"
 }
+
+tasks {
+    register("enableGitPrePushHook", Copy::class) {
+        from("$projectDir/gradle/hook/pre-push")
+        into(".git/hooks")
+        // decimal of 755 in octal
+        fileMode = 493
+    }
+    register("removeGitPrePushHook", Delete::class) {
+        delete(".git/hooks/pre-push")
+    }
+}
