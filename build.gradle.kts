@@ -1,3 +1,14 @@
+buildscript {
+    repositories {
+        maven {
+            url = uri("https://plugins.gradle.org/m2/")
+        }
+    }
+    dependencies {
+        classpath("gradle.plugin.com.github.spotbugs:spotbugs-gradle-plugin:2.0.0")
+    }
+}
+
 plugins {
     id("org.jetbrains.kotlin.jvm").version("1.3.10")
 
@@ -6,11 +17,13 @@ plugins {
     idea
 }
 
-apply{
+apply {
     from("gradle/checkstyle/check-style.gradle.kts")
+    from("gradle/spotbugs.gradle.kts")
 }
 
 repositories {
+    mavenCentral()
     jcenter()
 }
 

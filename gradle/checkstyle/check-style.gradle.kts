@@ -1,4 +1,4 @@
-apply{
+apply {
     plugin("checkstyle")
 }
 
